@@ -76,16 +76,16 @@ class KatalkController < ApplicationController
         item = Item.find_by_name(cut)
         check = Like.find_by_user(key)
         
-        if check.present?
-        answer = {message: { text: "이미 투표하셨습니다! 결과를 확인해 보세요!", message_button: {label: "사이트 접속", url: "https://boiling-sea-11755.herokuapp.com/"}},
+        # if check.present?
+        # answer = {message: { text: "이미 투표하셨습니다! 결과를 확인해 보세요!", message_button: {label: "사이트 접속", url: "https://boiling-sea-11755.herokuapp.com/"}},
                 
-                keyboard: { "type"=> "buttons", "buttons"=> ["돌아가기"]
-                }
-        } 
+        #         keyboard: { "type"=> "buttons", "buttons"=> ["돌아가기"]
+        #         }
+        # } 
         
-        else
+        # else
             
-        Like.create(:user => key ,:item_id => item.id)
+        Like.find_or_create_by(:user => key ,:item_id => item.id)
         
         
         answer = {message: { text: "투표 완료! 결과를 확인하세요! ", message_button: {label: "사이트 접속", url: "https://boiling-sea-11755.herokuapp.com/"}},
@@ -94,7 +94,7 @@ class KatalkController < ApplicationController
                 }
         }    
         
-        end
+        # end
     end
     
     render json: answer
