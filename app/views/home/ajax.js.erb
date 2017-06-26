@@ -1,0 +1,14 @@
+(function ($) {
+    console.log("<%= @items.first.getRank %>")
+    <!--alert("<%#= @items.first.name %>")-->
+    <!--$("#comment_body").val("")-->
+    <!--var html = "<%#= escape_javascript(render 'getRank', items: @items) %>";-->
+    <!--$(".loader").empty();-->
+    <!--$(".loader").prepend(html);-->
+    <% @items.each do |i|%>
+        $("#td_<%=i.id%>").empty();
+        $("#td_<%=i.id%>").append(<%=i.getRank%>);
+        $("#cnt_<%=i.id%>").empty();
+        $("#cnt_<%=i.id%>").append(<%=i.likes.count%>+"마리");
+    <% end %>
+})(jQuery)

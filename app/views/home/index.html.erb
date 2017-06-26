@@ -1,0 +1,192 @@
+<div class="intro" style="padding-bottom:3%">
+    <img class="spinner" src="<%=asset_path 'lion.png'%>" width="20%"></img><br>
+    <img class="spinner" src="<%=asset_path 'logo1.png'%>" width="30%"></img>
+    <!--<h1 class="spinner" >PRODUCE<br>LION</h1>-->
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 menu" style="height:200%">
+            <div class="col-md-6 col-xs-6 menuItem" id="btnRank"><h5 class="nanum">RANK</h5></div>
+            <div class="col-md-6 col-xs-6 menuItem" id="btnVote"><h5 class="namum">VOTE</h5></div>
+        </div>
+    </div>
+</div>
+
+<div id="changeBody">
+    <div class="container" id="rank">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <table class="sort" style="width:100%">
+                    <thead style="border:none;">
+                        <tr>
+                            <th style="width:5%"></th>
+                            <th style="width:5%"></th>
+                            <th style="width:20%"></th>
+                            <th style="width:20%"></th>
+                            <th style="width:30%"></th>
+                            <th style="width:10%"></th>
+                            <th style="width:10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="loader">
+                        <% @items.each do |i|%>
+                        <tr onclick="window.open('<%= i.url %>', '_blank')">
+                            <td class="center" id="td_<%=i.id%>"><%= i.getRank%></td>
+                            <td><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></td>
+                            <td class="center"><img class="tableImg"src="<%= i.img%>" width="20%"></img></td>
+                            <td><%= i.name%></td>
+                            <td><%= i.teamName%></td>
+                            <td style="text-align:right;padding-right:5px"><img src="<%=asset_path 'lion_like.png'%>" width="30px"></img></td>
+                            <td id="cnt_<%=i.id%>"><%= i.likes.count%>마리</td>
+                        </tr>
+                        <%end%>
+                        <%#= render 'getRank', items: @items%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div hidden class="container" id="vote">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <table style="width:100%">
+                    <thead style="border:none;">
+                        <tr>
+                            <th style="width:15%"></th>
+                            <th style="width:20%"></th>
+                            <th style="width:30%"></th>
+                            <th style="width:15%"></th>
+                            <th style="width:10%"></th>
+                            <th style="width:10%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @items.each do |i|%>
+                            <tr>
+                                <td class="center"><%= i.name%></td>
+                                <td class="center"><img class="tableImg"src="<%= i.img%>" width="20%"></img></td>
+                                <td>ServiceDiscribe</td>
+                                <td><%= i.teamName%></td>
+                                <td style="padding-right:5px;"><div class="btnHover" onclick="location.href='/home/look/<%=i.id%>'">LOOK</div></td>
+                                <td><div class="btnHover" onclick="location.href='/home/count/<%=i.id%>'">
+                                    VOTE
+                                </div></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="float sweet" >
+    <p style="margin-bottom:0;" >NEW</p>
+</div>
+<div class="sort2 btn" style="display:none" >
+    sort
+</div>
+
+<script>
+    var btnRank = $("#btnRank");
+    var btnVote = $("#btnVote");
+    var rank = $("#rank");
+    var vote = $("#vote");
+    btnRank.css("background","linear-gradient(-135deg, #8c8cc2, #40b0df) fixed");
+    btnRank.css("color","white");    
+    btnVote.click(function(){
+        btnVote.css("background","linear-gradient(-135deg, #8c8cc2, #40b0df) fixed");
+        btnVote.css("color","white");
+        btnRank.css("background","inherit");
+        btnRank.css("color","#ddd");
+        vote.show();
+        rank.hide();    
+    });
+    btnRank.click(function(){
+        btnVote.css("color","#ddd");
+        btnVote.css("background","inherit");
+        btnRank.css("color","white");
+        btnRank.css("background","linear-gradient(-135deg, #8c8cc2, #40b0df) fixed");
+        vote.hide();
+        rank.show();
+    });
+    
+
+    
+    $('.sweet').click(function(){
+    swal({
+      title: '아이템 등록',
+      type: "success",
+      // background: '#fff url(//bit.ly/1Nqn9HU)',
+      html:
+        '<label for="male">아이템 이름</label>'+
+        '<input id="swal-input1" class="swal2-input">' +
+        '<label for="male">팀 이름</label>'+
+        '<input id="swal-input2" class="swal2-input">' +
+        '<label for="male">아이템 url</label>'+
+        '<input id="swal-input3" type="url" class="swal2-input">'+
+        '<label for="male">팀멤버</label>'+
+        '<input style="text-align:center" id="swal-input4" type="text" class="swal2-input">'+
+        '<input style="text-align:center" hidden id="swal-input5" type="text" class="swal2-input">'+
+        '<input style="text-align:center" hidden id="swal-input6" type="text" class="swal2-input">'+
+        '<input style="text-align:center" hidden id="swal-input7" type="text" class="swal2-input">'+
+        '<input style="text-align:center" hidden id="swal-input8" type="text" class="swal2-input">'+
+        '<input style="text-align:center" hidden id="swal-input9" type="text" class="swal2-input">'+
+        '<button class="btnVote" id="btnMember">팀원이 더 있습니다.</button>',
+      preConfirm: function () {
+        return new Promise(function (resolve) {
+          resolve([
+            $('#swal-input1').val(),
+            $('#swal-input2').val(),
+            $('#swal-input3').val(),
+            $('#swal-input4').val(),
+            $('#swal-input5').val(),
+            $('#swal-input6').val(),
+            $('#swal-input7').val(),
+            $('#swal-input8').val(),
+            $('#swal-input9').val()
+          ])
+        })
+      },
+      onOpen: function () {
+          var i = 4;
+        $('#swal-input1').focus();
+        $('#btnMember').click(function(){
+            i++
+            if (i < 9){
+               $("#swal-input"+i.toString()).show();
+               if(i==8){
+                    // $("#btnMember").css("background-color", "yellow");
+                    // $("#btnMember").disable();
+                    $('#btnMember').text("더 이상의 팀원은 있을 수 없어");
+               }
+            }else{
+            }
+        });
+      }
+    }).then(function (result) {
+      location.replace('/home/create?name=' + result[0]+'&teamName=' + result[1]+'&url='+ result[2]+'&member1='+ result[3]+'&member2='+ result[4]+'&member3='+ result[5]+'&member4='+ result[6]+'&member5='+ result[7]+'&member6='+ result[8]);
+      // swal(JSON.stringify(result))
+    }).catch(swal.noop)
+});
+    
+$(document).ready(function() {
+     $('.sort').tableSort( {
+        animation :'slide',
+        speed:500
+    });    
+    setInterval(function() {
+      $.ajax({
+          type: 'GET',
+          url: '/home/ajax',
+          format: 'js'
+      });
+      $('.sort2').trigger('click');
+  }, 2000);
+});
+
+
+</script>

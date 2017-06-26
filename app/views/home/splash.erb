@@ -1,0 +1,24 @@
+<div id="splash_bg">
+<div id="splash" class="splash busan" >
+    <img class="spinner_s" src="<%=asset_path 'lion_black.png'%>" width="20%"></img></br>
+    <img class="spinner_s" src="<%=asset_path 'logo2.png'%>" width="30%"></img>
+    <!--<h1 class="spinner_s1" >PRODUCE<br>LION</h1><br>-->
+    <h1 id="fadein">당신의 LION에 투표하세요!</h1>
+</div>
+
+
+
+<script type="text/javascript">
+            $('#splash').ready() 
+            {
+                $('#main').load('splash');
+                setTimeout(function() {
+                    $('#main').ready(function() {
+                        $('#splash').remove();
+                        window.location.href = "home/index";
+                    });
+                }, 6000);
+            };
+</script>
+
+</div>

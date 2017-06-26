@@ -1,0 +1,10 @@
+<% items.each do |i|%>
+<tr>
+    <td class="center"><%= i.getRank%></td>
+    <td><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></td>
+    <td class="center"><img class="tableImg"src="<%= i.img%>" width="20%"></img></td>
+    <td><%= i.name%></td>
+    <td><%= i.teamName%></td>
+    <td><%= i.likes.count%></td>
+</tr>
+<%end%>

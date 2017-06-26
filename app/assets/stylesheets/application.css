@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require sweetalert2
+ *= require home
+ */
+
+
+
+
+/*네비게이션 바를 위한*/
+/*.navbar-custom {*/
+/*  margin-bottom: 0;*/
+/*  border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
+/*  text-transform: uppercase;*/
+/*  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+/*  background-color: black;*/
+/*}*/
+/*.navbar-custom .navbar-toggle {*/
+/*  color: white;*/
+/*  background-color: rgba(255, 255, 255, 0.2);*/
+/*  font-size: 12px;*/
+/*}*/
+/*.navbar-custom .navbar-toggle:focus,*/
+/*.navbar-custom .navbar-toggle:active {*/
+/*  outline: none;*/
+/*}*/
+/*.navbar-custom .navbar-brand {*/
+/*  font-weight: 700;*/
+/*}*/
+/*.navbar-custom .navbar-brand:focus {*/
+/*  outline: none;*/
+/*}*/
+/*.navbar-custom a {*/
+/*  color: white;*/
+/*}*/
+/*.navbar-custom .nav li a {*/
+/*  -webkit-transition: background 0.3s ease-in-out;*/
+/*  -moz-transition: background 0.3s ease-in-out;*/
+/*  transition: background 0.3s ease-in-out;*/
+/*}*/
+/*.navbar-custom .nav li a:hover {*/
+/*  color: rgba(255, 255, 255, 0.8);*/
+/*  outline: none;*/
+/*  background-color: transparent;*/
+/*}*/
+/*.navbar-custom .nav li a:focus,*/
+/*.navbar-custom .nav li a:active {*/
+/*  outline: none;*/
+/*  background-color: transparent;*/
+/*}*/
+/*.navbar-custom .nav li.active {*/
+/*  outline: none;*/
+/*}*/
+/*.navbar-custom .nav li.active a {*/
+/*  background-color: rgba(255, 255, 255, 0.3);*/
+/*}*/
+/*.navbar-custom .nav li.active a:hover {*/
+/*  color: white;*/
+/*}*/
+/*@media (min-width: 768px) {*/
+/*  .navbar-custom {*/
+/*    padding: 20px 0;*/
+/*    border-bottom: none;*/
+/*    letter-spacing: 1px;*/
+/*    background: transparent;*/
+/*    -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;*/
+/*    -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;*/
+/*    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;*/
+/*  }*/
+/*  .navbar-custom.top-nav-collapse {*/
+/*    padding: 0;*/
+/*    background: black;*/
+/*    border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
+/*  }*/
+/*}*/
+
+body{
+    /*background: linear-gradient(-135deg, #8c8cc2, #40b0df) fixed;*/
+    /*padding-bottom:10%;*/
+}
+
+
+

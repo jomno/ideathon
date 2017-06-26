@@ -1,0 +1,169 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// 테이블 정렬
+table.tableSorter th div.sortArrow {
+	width: 11px;
+	height: 6px;
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: 2px;
+	position: relative;
+}
+
+table.tableSorter th div.sortArrow div.sortArrowAscending,
+table.tableSorter th div.sortArrow div.sortArrowDescending {
+	position: absolute;
+	display: none;
+	width: 11px;
+	height: 6px;
+}
+
+table.tableSorter th div.sortArrow div.sortArrowAscending {
+	background: url('arrow_asc.png');
+}
+
+table.tableSorter th div.sortArrow div.sortArrowDescending {
+	background: url('arrow_desc.png') no-repeat;
+}
+
+
+
+// 메인페이지 로테이팅
+
+
+
+.spinner {
+    -webkit-animation-name: spinner;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+
+
+
+    animation-name: spinner;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    
+
+
+
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  
+  
+/* WebKit and Opera browsers */
+  @-webkit-keyframes spinner {
+    from { -webkit-transform: rotateY(0deg);    }
+    to   { -webkit-transform: rotateY(-360deg);}
+  }
+
+  /* all other browsers */
+  //@keyframes spinner {
+  //  from {
+  //    -moz-transform: rotateY(0deg);
+  //    -ms-transform: rotateY(0deg);
+  //    transform: rotateY(0deg);
+  //  }
+  //  to {
+  //    -moz-transform: rotateY(-360deg);
+  //    -ms-transform: rotateY(-360deg);
+  //    transform: rotateY(-360deg);
+
+  //  }
+  //}
+  
+	@keyframes spinner {
+		0% { transform:rotateY(0) }
+		20% { transform:rotateY(100deg) }
+		40% { transform:rotateY(160deg) }
+		50% { transform:rotateY(180deg) }
+		60% { transform:rotateY(280deg) }
+		80% { transform:rotateY(360deg) }
+		100% { transform:rotateY(360deg) }
+	}
+	
+	
+	
+// 스플래시용
+.spinner_s {
+    -webkit-animation-name: spinner_s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 3s;
+
+
+
+    animation-name: spinner_s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 3s;
+    
+
+
+
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  
+  
+/* WebKit and Opera browsers */
+  @-webkit-keyframes spinner_s {
+    from { -webkit-transform: rotateY(0deg);    }
+    to   { -webkit-transform: rotateY(-360deg);}
+  }
+
+  
+	@keyframes spinner_s {
+		0% { transform:rotateY(0) }
+		20% { transform:rotateY(100deg) }
+		40% { transform:rotateY(160deg) }
+		50% { transform:rotateY(180deg) }
+		60% { transform:rotateY(280deg) }
+		80% { transform:rotateY(360deg) }
+		100% { transform:rotateY(360deg) }
+	}
+	
+	
+	
+	#fadein{
+	animation:4s ease 0s normal forwards 1 fadein;
+	-webkit-animation:4s ease 0s normal forwards 1 fadein;
+	opacity:1
+	}
+	
+	@keyframes fadein{
+	    0%{opacity:0}
+	    80%{opacity:0}
+	    100%{opacity:1}
+	}
+	
+	@-webkit-keyframes fadein{
+	    0%{opacity:0}
+	    80%{opacity:0}
+	    100%{opacity:1}
+	}
+	
+	
+	
+	
+
+// #splash_bg {
+// 	background-image : url('/bg.png');
+	
+// }
+
+
