@@ -18,7 +18,7 @@ class KatalkController < ApplicationController
      
     if msg == "사이트 접속하기"
         answer = {message: { text: "어서오세요! Produce LION 입니다!",
-                    message_button: {label: "사이트 접속", url: "https://sinchon-hackerthon-jomno.c9users.io"}},
+                    message_button: {label: "사이트 접속", url: "https://boiling-sea-11755.herokuapp.com/"}},
                     keyboard: { "type"=> "buttons", "buttons"=> ["돌아가기", "투표하기"]
                     }
         }
@@ -77,7 +77,7 @@ class KatalkController < ApplicationController
         check = Like.find_by_user(key)
         
         if check.present?
-        answer = {message: { text: "이미 투표하셨습니다! 결과를 확인해 보세요!", message_button: {label: "사이트 접속", url: "https://sinchon-hackerthon-jomno.c9users.io"}},
+        answer = {message: { text: "이미 투표하셨습니다! 결과를 확인해 보세요!", message_button: {label: "사이트 접속", url: "https://boiling-sea-11755.herokuapp.com/"}},
                 
                 keyboard: { "type"=> "buttons", "buttons"=> ["돌아가기"]
                 }
@@ -88,7 +88,7 @@ class KatalkController < ApplicationController
         Like.create(:user => key ,:item_id => item.id)
         
         
-        answer = {message: { text: "투표 완료! 결과를 확인하세요! ", message_button: {label: "사이트 접속", url: "https://sinchon-hackerthon-jomno.c9users.io"}},
+        answer = {message: { text: "투표 완료! 결과를 확인하세요! ", message_button: {label: "사이트 접속", url: "https://boiling-sea-11755.herokuapp.com/"}},
                 
                 keyboard: { "type"=> "buttons", "buttons"=> ["돌아가기"]
                 }
